@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>对于sqlmap的初步应用</title>
-    <link href="/2025/11/08/sqlmap/"/>
-    <url>/2025/11/08/sqlmap/</url>
+    <title>对于dirsearch的初步应用</title>
+    <link href="/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <url>/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
     
-    <content type="html"><![CDATA[<h1 id="对于sqlmap的应用"><a href="#对于sqlmap的应用" class="headerlink" title="对于sqlmap的应用"></a>对于sqlmap的应用</h1><h2 id="简单的渗透"><a href="#简单的渗透" class="headerlink" title="简单的渗透"></a>简单的渗透</h2><h3 id="1-找注入点"><a href="#1-找注入点" class="headerlink" title="1. 找注入点"></a>1. 找注入点</h3><p>首先要找到交互点，就是像网站的输入框，搜索框之类的</p><p>之后进行验证，借助’这个符号进行验证。比如像下面这个图片中这样</p><p><img src="/img/%E5%9B%BE%E7%89%871.png" alt="注入点"></p><p>如果页面报错或者空白说明这是一个有用的注入点，接下来进行渗透</p><p>使用cmd打开sqlmap，输入以下命令python sqlmap.py -u “网站地址“ –current-db 来获取数据库名称</p><p><img src="/img/%E5%9B%BE%E7%89%872.png" alt="获取数据库名称"></p><p>找到名称为cms<br>进行下一步获取数据表名称<br>python sqlmap.py -u “网站地址“ -D 数据库名称 –tables</p><p><img src="/img/%E5%9B%BE%E7%89%873.png" alt="获取数据表名称"></p><p>获取到数据表的名称，对其进行判断，找到你要访问的表，去获取数据列<br>python sqlmap.py -u “网站地址“ -D 数据库名称 -T数据表名称 –columns</p><p><img src="/img/%E5%9B%BE%E7%89%874.png" alt="数据列名称"></p><p>得到数据列，然后去找数据<br>python sqlmap.py -u “网站地址“ -D 数据库名称 -T数据表名称 -C 数据列名称 –dump</p><p><img src="/img/%E5%9B%BE%E7%89%875.png" alt="数据"><img src="/img/%E5%9B%BE%E7%89%876.png" alt="数据"></p><h2 id="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"><a href="#本文中使用的网址仅作为渗透测试，不能用于其他用途！！！" class="headerlink" title="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"></a>本文中使用的网址仅作为渗透测试，不能用于其他用途！！！</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="针对dirsearch的学习-r"><a href="#针对dirsearch的学习-r" class="headerlink" title="针对dirsearch的学习,r"></a>针对dirsearch的学习,r</h1><h2 id="如何找到后台登陆界面"><a href="#如何找到后台登陆界面" class="headerlink" title="如何找到后台登陆界面"></a>如何找到后台登陆界面</h2><p>首先打开页面</p><p><img src="/img/dk.png" alt="打开"></p><p>用cmd运行<br><img src="/img/cmd.png" alt="cmd"></p><p>在命令栏中输入以下命令</p><p>python dirsearch.py -u “想扫描的网址” -e*</p><p><img src="/img/wz.png" alt="命令"></p><p>会扫描出其他网址，就可以在里面找到后台登录的网址</p><p><img src="/img/ht1.png" alt="网址"></p><p>根据判断就是<a href="http://43.139.231.237:34025/admin/">http://43.139.231.237:34025/admin/</a></p><p>找到了那个带admin的网址，就是登录界面</p><h2 id="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"><a href="#本文中使用的网址仅作为渗透测试，不能用于其他用途！！！" class="headerlink" title="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"></a>本文中使用的网址仅作为渗透测试，不能用于其他用途！！！</h2>]]></content>
     
     
     
@@ -17,11 +17,11 @@
   
   
   <entry>
-    <title>对于dirsearch的初步应用</title>
-    <link href="/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    <url>/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
+    <title>对于sqlmap的初步应用</title>
+    <link href="/2025/11/08/sqlmap/"/>
+    <url>/2025/11/08/sqlmap/</url>
     
-    <content type="html"><![CDATA[<h1 id="针对dirsearch的学习-r"><a href="#针对dirsearch的学习-r" class="headerlink" title="针对dirsearch的学习,r"></a>针对dirsearch的学习,r</h1><h2 id="如何找到后台登陆界面"><a href="#如何找到后台登陆界面" class="headerlink" title="如何找到后台登陆界面"></a>如何找到后台登陆界面</h2><p>首先打开页面</p><p><img src="/img/dk.png" alt="打开"></p><p>用cmd运行<br><img src="/img/cmd.png" alt="cmd"></p><p>在命令栏中输入以下命令</p><p>python dirsearch.py -u “想扫描的网址” -e*</p><p><img src="/img/wz.png" alt="命令"></p><p>会扫描出其他网址，就可以在里面找到后台登录的网址</p><p><img src="/img/ht1.png" alt="网址"></p><p>根据判断就是<a href="http://43.139.231.237:34025/admin/">http://43.139.231.237:34025/admin/</a></p><p>找到了那个带admin的网址，就是登录界面</p><h2 id="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"><a href="#本文中使用的网址仅作为渗透测试，不能用于其他用途！！！" class="headerlink" title="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"></a>本文中使用的网址仅作为渗透测试，不能用于其他用途！！！</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="对于sqlmap的应用"><a href="#对于sqlmap的应用" class="headerlink" title="对于sqlmap的应用"></a>对于sqlmap的应用</h1><h2 id="简单的渗透"><a href="#简单的渗透" class="headerlink" title="简单的渗透"></a>简单的渗透</h2><h3 id="1-找注入点"><a href="#1-找注入点" class="headerlink" title="1. 找注入点"></a>1. 找注入点</h3><p>首先要找到交互点，就是像网站的输入框，搜索框之类的</p><p>之后进行验证，借助’这个符号进行验证。比如像下面这个图片中这样</p><p><img src="/img/%E5%9B%BE%E7%89%871.png" alt="注入点"></p><p>如果页面报错或者空白说明这是一个有用的注入点，接下来进行渗透</p><p>使用cmd打开sqlmap，输入以下命令python sqlmap.py -u “网站地址“ –current-db 来获取数据库名称</p><p><img src="/img/%E5%9B%BE%E7%89%872.png" alt="获取数据库名称"></p><p>找到名称为cms<br>进行下一步获取数据表名称<br>python sqlmap.py -u “网站地址“ -D 数据库名称 –tables</p><p><img src="/img/%E5%9B%BE%E7%89%873.png" alt="获取数据表名称"></p><p>获取到数据表的名称，对其进行判断，找到你要访问的表，去获取数据列<br>python sqlmap.py -u “网站地址“ -D 数据库名称 -T数据表名称 –columns</p><p><img src="/img/%E5%9B%BE%E7%89%874.png" alt="数据列名称"></p><p>得到数据列，然后去找数据<br>python sqlmap.py -u “网站地址“ -D 数据库名称 -T数据表名称 -C 数据列名称 –dump</p><p><img src="/img/%E5%9B%BE%E7%89%875.png" alt="数据"><img src="/img/%E5%9B%BE%E7%89%876.png" alt="数据"></p><h2 id="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"><a href="#本文中使用的网址仅作为渗透测试，不能用于其他用途！！！" class="headerlink" title="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"></a>本文中使用的网址仅作为渗透测试，不能用于其他用途！！！</h2>]]></content>
     
     
     
