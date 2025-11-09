@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>对于week1 《关于我穿越到CTF的异世界这档事:序》的复盘</title>
+    <link href="/2025/11/09/week1%E5%BC%82%E4%B8%96%E7%95%8C/"/>
+    <url>/2025/11/09/week1%E5%BC%82%E4%B8%96%E7%95%8C/</url>
+    
+    <content type="html"><![CDATA[<h1 id="week1-《关于我穿越到CTF的异世界这档事-序》"><a href="#week1-《关于我穿越到CTF的异世界这档事-序》" class="headerlink" title="week1 《关于我穿越到CTF的异世界这档事:序》"></a>week1 《关于我穿越到CTF的异世界这档事:序》</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>先看题目,判断应该是base解密<br><img src="/img/%E5%BC%82%E4%B8%96%E7%95%8C1.png" alt="题目"><br>下载附件，解压后有两个文件夹<br><img src="/img/%E5%BC%82%E4%B8%96%E7%95%8C1(1).png" alt="附件"><br>一个文件名为base8，判断为base8解密，base8解密需要对照表，那么判断对照表应该在另一个文件中，打开那个文件<br><img src="/img/%E5%BC%82%E4%B8%96%E7%95%8C1(2).png" alt="文件"><br>观察这个文件，发现文本内容高度相似，判断是base64的隐写，把文本放到网站中解密<br><img src="/img/%E5%BC%82%E4%B8%96%E7%95%8C1(3).png" alt="解码过程"><br>成功提取到了密钥是?CTFmisc，再打开bsase8的文件<br><img src="/img/%E5%BC%82%E4%B8%96%E7%95%8C1(4).png" alt="文件"><br>根据对照关系解密，如？对照0，C对照1，翻译为3位的二进制进行编码，变为八位一段进行转化，然后再base64解密。就可以得到答案</p><h3 id="最后答案为flag-Th3-Pr1nc1pl3-0f-Base-1s-S0-Ezz"><a href="#最后答案为flag-Th3-Pr1nc1pl3-0f-Base-1s-S0-Ezz" class="headerlink" title="最后答案为flag{Th3_Pr1nc1pl3_0f_Base_1s_S0_Ezz}"></a>最后答案为flag{Th3_Pr1nc1pl3_0f_Base_1s_S0_Ezz}</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>-ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>对于流量包的基础解读</title>
     <link href="/2025/11/09/web%E5%9F%BA%E7%A1%80/"/>
     <url>/2025/11/09/web%E5%9F%BA%E7%A1%80/</url>
