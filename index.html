@@ -16,15 +16,15 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="sport lin">
+  <meta name="author" content="wslcx">
   <meta name="keywords" content="">
   
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://linsport.github.io/index.html">
+<meta property="og:url" content="https://wslcx.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="sport lin">
+<meta property="article:author" content="wslcx">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -61,7 +61,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"linsport.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wslcx.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -227,15 +227,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/" target="_self">
-          对于dirsearch的初步应用
+        <a href="/2025/11/09/web%E5%9F%BA%E7%A1%80/" target="_self">
+          对于流量包的基础解读
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/11/09/web%E5%9F%BA%E7%A1%80/" target="_self">
         <div>
-          针对dirsearch的学习,r如何找到后台登陆界面首先打开页面  用cmd运行 在命令栏中输入以下命令 python dirsearch.py -u “想扫描的网址” -e*  会扫描出其他网址，就可以在里面找到后台登录的网址  根据判断就是http://43.139.231.237:34025/admin/ 找到了那个带admin的网址，就是登录界面 本文中使用的网址仅作为渗透测试，不能用于其
+          报文基本解读作为一个新手今天开始具体学习web方面的相关知识 针对下面这种图片进行解读 请求行POST &#x2F;api&#x2F;graphs&#x2F;fulltext-search?haha&#x3D;123 HTTP&#x2F;1.1 POST 是一种请求方法，向服务器提交数据 我查了一些资料，发现还有其他的请求方法，     GET用于获取资源（如浏览网页、查询数据），参数通常附在UR
         </div>
       </a>
 
@@ -243,8 +243,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2025-11-08 00:00" pubdate>
-              2025-11-08
+            <time datetime="2025-11-09 00:00" pubdate>
+              2025-11-09
             </time>
           </div>
         
@@ -269,6 +269,39 @@
       <a class="index-excerpt index-excerpt__noimg" href="/2025/11/08/sqlmap/" target="_self">
         <div>
           对于sqlmap的应用简单的渗透1. 找注入点首先要找到交互点，就是像网站的输入框，搜索框之类的 之后进行验证，借助’这个符号进行验证。比如像下面这个图片中这样  如果页面报错或者空白说明这是一个有用的注入点，接下来进行渗透 使用cmd打开sqlmap，输入以下命令python sqlmap.py -u “网站地址“ –current-db 来获取数据库名称  找到名称为cms进行下一步获取数据表
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-08 00:00" pubdate>
+              2025-11-08
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/" target="_self">
+          对于dirsearch的初步应用
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/" target="_self">
+        <div>
+          针对dirsearch的学习如何找到后台登陆界面首先打开页面  用cmd运行 在命令栏中输入以下命令 python dirsearch.py -u “想扫描的网址” -e*  会扫描出其他网址，就可以在里面找到后台登录的网址  根据判断就是http://43.139.231.237:34025/admin/ 找到了那个带admin的网址，就是登录界面 本文中使用的网址仅作为渗透测试，不能用于其他用
         </div>
       </a>
 
