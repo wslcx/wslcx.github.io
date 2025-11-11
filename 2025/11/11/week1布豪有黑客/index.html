@@ -19,28 +19,29 @@
   <meta name="author" content="wslcx">
   <meta name="keywords" content="">
   
-    <meta name="description" content="对于sqlmap的应用简单的渗透1. 找注入点首先要找到交互点，就是像网站的输入框，搜索框之类的 之后进行验证，借助’这个符号进行验证。比如像下面这个图片中这样  如果页面报错或者空白说明这是一个有用的注入点，接下来进行渗透 使用cmd打开sqlmap，输入以下命令python sqlmap.py -u “网站地址“ –current-db 来获取数据库名称  找到名称为cms进行下一步获取数据表">
+    <meta name="description" content="week1 布豪有黑客（1）复盘解密先看题目，根据题目信息，flag应该藏在http的流量包里。用Wireshark打开附件，用http过滤发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出发现压缩包有密码，然后passsword里有密码将密码输入 然后就得到flag了这里主要就是考流量包的解析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对于sqlmap的初步应用">
-<meta property="og:url" content="https://wslcx.github.io/2025/11/08/sqlmap/index.html">
+<meta property="og:title" content="对于week1 布豪有黑客（1）的复盘">
+<meta property="og:url" content="https://wslcx.github.io/2025/11/11/week1%E5%B8%83%E8%B1%AA%E6%9C%89%E9%BB%91%E5%AE%A2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="对于sqlmap的应用简单的渗透1. 找注入点首先要找到交互点，就是像网站的输入框，搜索框之类的 之后进行验证，借助’这个符号进行验证。比如像下面这个图片中这样  如果页面报错或者空白说明这是一个有用的注入点，接下来进行渗透 使用cmd打开sqlmap，输入以下命令python sqlmap.py -u “网站地址“ –current-db 来获取数据库名称  找到名称为cms进行下一步获取数据表">
+<meta property="og:description" content="week1 布豪有黑客（1）复盘解密先看题目，根据题目信息，flag应该藏在http的流量包里。用Wireshark打开附件，用http过滤发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出发现压缩包有密码，然后passsword里有密码将密码输入 然后就得到flag了这里主要就是考流量包的解析">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wslcx.github.io/img/%E5%9B%BE%E7%89%871.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E5%9B%BE%E7%89%872.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E5%9B%BE%E7%89%873.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E5%9B%BE%E7%89%874.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E5%9B%BE%E7%89%875.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E5%9B%BE%E7%89%876.png">
-<meta property="article:published_time" content="2025-11-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-08T10:51:28.134Z">
+<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21">
+<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%881%EF%BC%89">
+<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%882%EF%BC%89">
+<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%883%EF%BC%89">
+<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%884%EF%BC%89">
+<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%885%EF%BC%89">
+<meta property="article:published_time" content="2025-11-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-11T16:07:50.708Z">
 <meta property="article:author" content="wslcx">
+<meta property="article:tag" content="-ctf">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wslcx.github.io/img/%E5%9B%BE%E7%89%871.png">
+<meta name="twitter:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21">
   
   
   
-  <title>对于sqlmap的初步应用 - Hexo</title>
+  <title>对于week1 布豪有黑客（1）的复盘 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +207,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="对于sqlmap的初步应用"></span>
+            <span id="subtitle" data-typed-text="对于week1 布豪有黑客（1）的复盘"></span>
           
         </div>
 
@@ -217,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-11-08 00:00" pubdate>
-          2025年11月8日 凌晨
+        <time datetime="2025-11-11 00:00" pubdate>
+          2025年11月11日 凌晨
         </time>
       </span>
     
@@ -229,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          262 字
+          110 字
         
       </span>
     
@@ -240,7 +241,7 @@
         
         
         
-          3 分钟
+          1 分钟
         
       </span>
     
@@ -277,24 +278,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">对于sqlmap的初步应用</h1>
+            <h1 id="seo-header">对于week1 布豪有黑客（1）的复盘</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="对于sqlmap的应用"><a href="#对于sqlmap的应用" class="headerlink" title="对于sqlmap的应用"></a>对于sqlmap的应用</h1><h2 id="简单的渗透"><a href="#简单的渗透" class="headerlink" title="简单的渗透"></a>简单的渗透</h2><h3 id="1-找注入点"><a href="#1-找注入点" class="headerlink" title="1. 找注入点"></a>1. 找注入点</h3><p>首先要找到交互点，就是像网站的输入框，搜索框之类的</p>
-<p>之后进行验证，借助’这个符号进行验证。比如像下面这个图片中这样</p>
-<p><img src="/img/%E5%9B%BE%E7%89%871.png" srcset="/img/loading.gif" lazyload alt="注入点"></p>
-<p>如果页面报错或者空白说明这是一个有用的注入点，接下来进行渗透</p>
-<p>使用cmd打开sqlmap，输入以下命令python sqlmap.py -u “网站地址“ –current-db 来获取数据库名称</p>
-<p><img src="/img/%E5%9B%BE%E7%89%872.png" srcset="/img/loading.gif" lazyload alt="获取数据库名称"></p>
-<p>找到名称为cms<br>进行下一步获取数据表名称<br>python sqlmap.py -u “网站地址“ -D 数据库名称 –tables</p>
-<p><img src="/img/%E5%9B%BE%E7%89%873.png" srcset="/img/loading.gif" lazyload alt="获取数据表名称"></p>
-<p>获取到数据表的名称，对其进行判断，找到你要访问的表，去获取数据列<br>python sqlmap.py -u “网站地址“ -D 数据库名称 -T数据表名称 –columns</p>
-<p><img src="/img/%E5%9B%BE%E7%89%874.png" srcset="/img/loading.gif" lazyload alt="数据列名称"></p>
-<p>得到数据列，然后去找数据<br>python sqlmap.py -u “网站地址“ -D 数据库名称 -T数据表名称 -C 数据列名称 –dump</p>
-<p><img src="/img/%E5%9B%BE%E7%89%875.png" srcset="/img/loading.gif" lazyload alt="数据"><img src="/img/%E5%9B%BE%E7%89%876.png" srcset="/img/loading.gif" lazyload alt="数据"></p>
-<h2 id="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"><a href="#本文中使用的网址仅作为渗透测试，不能用于其他用途！！！" class="headerlink" title="本文中使用的网址仅作为渗透测试，不能用于其他用途！！！"></a>本文中使用的网址仅作为渗透测试，不能用于其他用途！！！</h2>
+                <h1 id="week1-布豪有黑客（1）"><a href="#week1-布豪有黑客（1）" class="headerlink" title="week1 布豪有黑客（1）"></a>week1 布豪有黑客（1）</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>先看题目，根据题目信息，flag应该藏在http的流量包里。<br><img src="/img/%E9%BB%91%E5%AE%A21" srcset="/img/loading.gif" lazyload alt="题目"><br>用Wireshark打开附件，用http过滤<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%881%EF%BC%89" srcset="/img/loading.gif" lazyload alt="题目"><br>发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%882%EF%BC%89" srcset="/img/loading.gif" lazyload alt="题目"><br>发现压缩包有密码，然后passsword里有密码将密码输入<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%883%EF%BC%89" srcset="/img/loading.gif" lazyload alt="题目"> <img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%884%EF%BC%89" srcset="/img/loading.gif" lazyload alt="题目"><br>然后就得到flag了<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%885%EF%BC%89" srcset="/img/loading.gif" lazyload alt="题目"><br>这里主要就是考流量包的解析</p>
+
                 
               </div>
             
@@ -302,6 +292,13 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ctf/" class="print-no-link">#-ctf</a>
+      
+    </div>
   
 </div>
 
@@ -311,8 +308,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>对于sqlmap的初步应用</div>
-      <div>https://wslcx.github.io/2025/11/08/sqlmap/</div>
+      <div>对于week1 布豪有黑客（1）的复盘</div>
+      <div>https://wslcx.github.io/2025/11/11/week1布豪有黑客/</div>
     </div>
     <div class="license-meta">
       
@@ -324,7 +321,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年11月8日</div>
+          <div>2025年11月11日</div>
         </div>
       
       
@@ -356,18 +353,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/11/09/week1%E5%BC%82%E4%B8%96%E7%95%8C/" title="对于week1 《关于我穿越到CTF的异世界这档事:序》的复盘">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">对于week1 《关于我穿越到CTF的异世界这档事:序》的复盘</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/11/08/%E9%92%88%E5%AF%B9dirsearch%E7%9A%84%E5%AD%A6%E4%B9%A0/" title="对于dirsearch的初步应用">
-                        <span class="hidden-mobile">对于dirsearch的初步应用</span>
+                      <a href="/2025/11/09/web%E5%9F%BA%E7%A1%80/" title="对于流量包的基础解读">
+                        <span class="hidden-mobile">对于流量包的基础解读</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
