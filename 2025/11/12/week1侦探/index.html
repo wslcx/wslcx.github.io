@@ -19,29 +19,29 @@
   <meta name="author" content="wslcx">
   <meta name="keywords" content="">
   
-    <meta name="description" content="week1 布豪有黑客（1）复盘解密先看题目，根据题目信息，flag应该藏在http的流量包里。用Wireshark打开附件，用http过滤发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出发现压缩包有密码，然后passsword里有密码将密码输入 然后就得到flag了这里主要就是考流量包的解析">
+    <meta name="description" content="week1 《文化木的侦探委托（一）》复盘解密先看题目,发现和图片有关下载附件，解压后打开只有一张图片我是有下一个工具，叫随波逐流CTF解码工具，把这个照片拉进去，他自动修复了这张照片 修复后照片是这样的那我们根据他的提示，应该是隐写，使用stegsolve进行解题根据提供的通道信息选择通道并导出就得到flag了   最后答案为flag{Please_Find_ME}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对于week1 布豪有黑客（1）的复盘">
-<meta property="og:url" content="https://wslcx.github.io/2025/11/11/week1%E5%B8%83%E8%B1%AA%E6%9C%89%E9%BB%91%E5%AE%A2/index.html">
+<meta property="og:title" content="对于week1 《文化木的侦探委托（一）》的复盘">
+<meta property="og:url" content="https://wslcx.github.io/2025/11/12/week1%E4%BE%A6%E6%8E%A2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="week1 布豪有黑客（1）复盘解密先看题目，根据题目信息，flag应该藏在http的流量包里。用Wireshark打开附件，用http过滤发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出发现压缩包有密码，然后passsword里有密码将密码输入 然后就得到flag了这里主要就是考流量包的解析">
+<meta property="og:description" content="week1 《文化木的侦探委托（一）》复盘解密先看题目,发现和图片有关下载附件，解压后打开只有一张图片我是有下一个工具，叫随波逐流CTF解码工具，把这个照片拉进去，他自动修复了这张照片 修复后照片是这样的那我们根据他的提示，应该是隐写，使用stegsolve进行解题根据提供的通道信息选择通道并导出就得到flag了   最后答案为flag{Please_Find_ME}">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%881%EF%BC%89.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%882%EF%BC%89.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%883%EF%BC%89.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%884%EF%BC%89.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%885%EF%BC%89.png">
-<meta property="article:published_time" content="2025-11-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-12T06:12:44.463Z">
+<meta property="og:image" content="https://wslcx.github.io/img/%E4%BE%A6%E6%8E%A21.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E4%BE%A6%E6%8E%A21%EF%BC%881%EF%BC%89.png.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E4%BE%A6%E6%8E%A21%EF%BC%882%EF%BC%89.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E4%BE%A6%E6%8E%A21%EF%BC%883%EF%BC%89.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E4%BE%A6%E6%8E%A21%EF%BC%884%EF%BC%89.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E4%BE%A6%E6%8E%A21%EF%BC%885%EF%BC%89.png">
+<meta property="article:published_time" content="2025-11-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-12T06:12:47.481Z">
 <meta property="article:author" content="wslcx">
 <meta property="article:tag" content="-ctf">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21.png">
+<meta name="twitter:image" content="https://wslcx.github.io/img/%E4%BE%A6%E6%8E%A21.png">
   
   
   
-  <title>对于week1 布豪有黑客（1）的复盘 - Hexo</title>
+  <title>对于week1 《文化木的侦探委托（一）》的复盘 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -207,7 +207,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="对于week1 布豪有黑客（1）的复盘"></span>
+            <span id="subtitle" data-typed-text="对于week1 《文化木的侦探委托（一）》的复盘"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-11-11 00:00" pubdate>
-          2025年11月11日 凌晨
+        <time datetime="2025-11-12 00:00" pubdate>
+          2025年11月12日 凌晨
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          110 字
+          132 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -278,13 +278,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">对于week1 布豪有黑客（1）的复盘</h1>
+            <h1 id="seo-header">对于week1 《文化木的侦探委托（一）》的复盘</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="week1-布豪有黑客（1）"><a href="#week1-布豪有黑客（1）" class="headerlink" title="week1 布豪有黑客（1）"></a>week1 布豪有黑客（1）</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>先看题目，根据题目信息，flag应该藏在http的流量包里。<br><img src="/img/%E9%BB%91%E5%AE%A21.png" srcset="/img/loading.gif" lazyload alt="题目"><br>用Wireshark打开附件，用http过滤<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%881%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="流量包"><br>发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%882%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="文件"><br>发现压缩包有密码，然后passsword里有密码将密码输入<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%883%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="压缩包"> <img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%884%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="密码"><br>然后就得到flag了<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%885%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="答案"><br>这里主要就是考流量包的解析</p>
-
+                <h1 id="week1-《文化木的侦探委托（一）》"><a href="#week1-《文化木的侦探委托（一）》" class="headerlink" title="week1 《文化木的侦探委托（一）》"></a>week1 《文化木的侦探委托（一）》</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>先看题目,发现和图片有关<br><img src="/img/%E4%BE%A6%E6%8E%A21.png" srcset="/img/loading.gif" lazyload alt="题目"><br>下载附件，解压后打开只有一张图片<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%881%EF%BC%89.png.png" srcset="/img/loading.gif" lazyload alt="附件"><br>我是有下一个工具，叫随波逐流CTF解码工具，把这个照片拉进去，他自动修复了这张照片<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%882%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="修复"><br> 修复后照片是这样的<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%883%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="照片"><br>那我们根据他的提示，应该是隐写，使用stegsolve进行解题<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%884%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="解题"><br>根据提供的通道信息选择通道并导出就得到flag了<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%885%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="flag">  </p>
+<h3 id="最后答案为flag-Please-Find-ME"><a href="#最后答案为flag-Please-Find-ME" class="headerlink" title="最后答案为flag{Please_Find_ME}"></a>最后答案为flag{Please_Find_ME}</h3>
                 
               </div>
             
@@ -308,8 +308,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>对于week1 布豪有黑客（1）的复盘</div>
-      <div>https://wslcx.github.io/2025/11/11/week1布豪有黑客/</div>
+      <div>对于week1 《文化木的侦探委托（一）》的复盘</div>
+      <div>https://wslcx.github.io/2025/11/12/week1侦探/</div>
     </div>
     <div class="license-meta">
       
@@ -321,7 +321,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年11月11日</div>
+          <div>2025年11月12日</div>
         </div>
       
       
@@ -353,18 +353,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/11/12/week1%E4%BE%A6%E6%8E%A2/" title="对于week1 《文化木的侦探委托（一）》的复盘">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">对于week1 《文化木的侦探委托（一）》的复盘</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/11/09/web%E5%9F%BA%E7%A1%80/" title="对于流量包的基础解读">
-                        <span class="hidden-mobile">对于流量包的基础解读</span>
+                      <a href="/2025/11/11/week1%E5%B8%83%E8%B1%AA%E6%9C%89%E9%BB%91%E5%AE%A2/" title="对于week1 布豪有黑客（1）的复盘">
+                        <span class="hidden-mobile">对于week1 布豪有黑客（1）的复盘</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

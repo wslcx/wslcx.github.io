@@ -4,11 +4,30 @@
   
   
   <entry>
+    <title>对于week1 《文化木的侦探委托（一）》的复盘</title>
+    <link href="/2025/11/12/week1%E4%BE%A6%E6%8E%A2/"/>
+    <url>/2025/11/12/week1%E4%BE%A6%E6%8E%A2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="week1-《文化木的侦探委托（一）》"><a href="#week1-《文化木的侦探委托（一）》" class="headerlink" title="week1 《文化木的侦探委托（一）》"></a>week1 《文化木的侦探委托（一）》</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>先看题目,发现和图片有关<br><img src="/img/%E4%BE%A6%E6%8E%A21.png" alt="题目"><br>下载附件，解压后打开只有一张图片<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%881%EF%BC%89.png.png" alt="附件"><br>我是有下一个工具，叫随波逐流CTF解码工具，把这个照片拉进去，他自动修复了这张照片<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%882%EF%BC%89.png" alt="修复"><br> 修复后照片是这样的<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%883%EF%BC%89.png" alt="照片"><br>那我们根据他的提示，应该是隐写，使用stegsolve进行解题<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%884%EF%BC%89.png" alt="解题"><br>根据提供的通道信息选择通道并导出就得到flag了<br><img src="/img/%E4%BE%A6%E6%8E%A21%EF%BC%885%EF%BC%89.png" alt="flag">  </p><h3 id="最后答案为flag-Please-Find-ME"><a href="#最后答案为flag-Please-Find-ME" class="headerlink" title="最后答案为flag{Please_Find_ME}"></a>最后答案为flag{Please_Find_ME}</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>-ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>对于week1 布豪有黑客（1）的复盘</title>
     <link href="/2025/11/11/week1%E5%B8%83%E8%B1%AA%E6%9C%89%E9%BB%91%E5%AE%A2/"/>
     <url>/2025/11/11/week1%E5%B8%83%E8%B1%AA%E6%9C%89%E9%BB%91%E5%AE%A2/</url>
     
-    <content type="html"><![CDATA[<h1 id="week1-布豪有黑客（1）"><a href="#week1-布豪有黑客（1）" class="headerlink" title="week1 布豪有黑客（1）"></a>week1 布豪有黑客（1）</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>先看题目，根据题目信息，flag应该藏在http的流量包里。<br><img src="/img/%E9%BB%91%E5%AE%A21" alt="题目"><br>用Wireshark打开附件，用http过滤<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%881%EF%BC%89" alt="题目"><br>发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%882%EF%BC%89" alt="题目"><br>发现压缩包有密码，然后passsword里有密码将密码输入<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%883%EF%BC%89" alt="题目"> <img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%884%EF%BC%89" alt="题目"><br>然后就得到flag了<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%885%EF%BC%89" alt="题目"><br>这里主要就是考流量包的解析</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="week1-布豪有黑客（1）"><a href="#week1-布豪有黑客（1）" class="headerlink" title="week1 布豪有黑客（1）"></a>week1 布豪有黑客（1）</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>先看题目，根据题目信息，flag应该藏在http的流量包里。<br><img src="/img/%E9%BB%91%E5%AE%A21.png" alt="题目"><br>用Wireshark打开附件，用http过滤<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%881%EF%BC%89.png" alt="流量包"><br>发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%882%EF%BC%89.png" alt="文件"><br>发现压缩包有密码，然后passsword里有密码将密码输入<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%883%EF%BC%89.png" alt="压缩包"> <img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%884%EF%BC%89.png" alt="密码"><br>然后就得到flag了<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%885%EF%BC%89.png" alt="答案"><br>这里主要就是考流量包的解析</p>]]></content>
     
     
     
