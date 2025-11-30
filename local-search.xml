@@ -4,6 +4,38 @@
   
   
   <entry>
+    <title>对于文件上传漏洞的初步学习</title>
+    <link href="/2025/11/16/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
+    <url>/2025/11/16/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</url>
+    
+    <content type="html"><![CDATA[<h1 id="初步文件上传漏洞的学习"><a href="#初步文件上传漏洞的学习" class="headerlink" title="初步文件上传漏洞的学习"></a>初步文件上传漏洞的学习</h1><h2 id="一句话木马和初步绕过"><a href="#一句话木马和初步绕过" class="headerlink" title="一句话木马和初步绕过"></a>一句话木马和初步绕过</h2><p>首先，要进行文件上传漏洞就要有可上传的地方，之后在这个交互口进行上传，我现在学习的是一句话木马的上传<br>用 <code>&lt;?php @eval($_POST[&#39;cmd&#39;]); ?&gt;</code>进行上传，这是一个经典的一句话木马，其中的<code>cmd</code>就是密码，应该是用于控制和获取整个网站的目录以及文件。<br>首先，如果网站没有对文件进行滤过操作，那么直接上传文件，之后用中国蚁剑这样的软件进行操作。<br>具体如下，先准备好要上传的文件，在网站的文件上传区域上传文件<br><img src="/img/%E4%B8%8A%E4%BC%A0.png" alt="上传"><br>但是正常的网站都会对文件名做一个过滤，就像这样<br><img src="/img/%E4%B8%8A%E4%BC%A01.png" alt="过滤"><br>这个时候，我们可以采取多个后缀的方式去绕过，比如将文件名改为wjsc.php.jpg这个时候系统会认为这个是一个jpg文件，就会将这个文件发送给服务器。<br><img src="/img/%E4%B8%8A%E4%BC%A02.png" alt="上传"><br>之后使用中国蚁剑就可以进入数据库，注意这里的url是要用网站的网址加上我加你上传的地址，就像下面这样。<br><img src="/img/%E4%B8%8A%E4%BC%A03.png" alt="蚁剑"><br>接下来，讲一下我已经学习的几种绕过方法</p><h3 id="1-多重后缀"><a href="#1-多重后缀" class="headerlink" title="1.多重后缀"></a>1.多重后缀</h3><ul><li><p>就像我上面演示的那样，在前端存在过滤时，可以用多个后缀去绕过，之后在进行bp抓包，将文件名重新修改为php<br><img src="/img/%E4%B8%8A%E4%BC%A04.png" alt="修改"> </p></li><li><p>如果在后端存在判断的话，可以在上传文件后，使用burpsuite进行抓包，然后将文件名进行修改，如果对面是从前面开始读取文件名，那么会在第一个顿号后进行判断，所以就可以把文件名修改成jpg.php的格式，这样可以迷惑后端，又可以让服务器识别为php文件，然后去执行。<br>就像下面这个题目<br><img src="/img/%E4%B8%8A%E4%BC%A05.png" alt="题目"><br>它明确告诉不要php后缀，说明后端存在过滤，这个时候就可以这样更改<br><img src="/img/%E4%B8%8A%E4%BC%A06.png" alt="后缀"></p></li></ul><h3 id="2-大小写绕过"><a href="#2-大小写绕过" class="headerlink" title="2.大小写绕过"></a>2.大小写绕过</h3><p>可以将php后缀改为PHP，大部分下二者不等，但是在window的服务器中可以执行，注意，网站的操作系统必须是window，不能是linux<br><img src="/img/%E4%B8%8A%E4%BC%A07.png" alt="大写"> </p><h3 id="3-更改文件类型"><a href="#3-更改文件类型" class="headerlink" title="3.更改文件类型"></a>3.更改文件类型</h3><p>就是在前端将php文件传给后端过程中进行抓包，将Content-Type进行修改<br>本来是<strong>application&#x2F;octet-stream</strong>类型，将它修改为<strong>image&#x2F;jpeg</strong>类型，或者<strong>image&#x2F;png</strong>类型，在这里面  </p><ul><li>application&#x2F;octet-stream 代表是php文件</li><li>mage&#x2F;jpeg 代表是jpg文件</li><li>image&#x2F;png代表是png文件</li></ul><h2 id="上面只是我初步的学习，可能有的方法没有列出，也可能有错误的地方，欢迎指出。"><a href="#上面只是我初步的学习，可能有的方法没有列出，也可能有错误的地方，欢迎指出。" class="headerlink" title="上面只是我初步的学习，可能有的方法没有列出，也可能有错误的地方，欢迎指出。"></a>上面只是我初步的学习，可能有的方法没有列出，也可能有错误的地方，欢迎指出。</h2>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>对于week2破碎的拼图的复盘</title>
+    <link href="/2025/11/15/%E6%8B%BC%E5%9B%BE/"/>
+    <url>/2025/11/15/%E6%8B%BC%E5%9B%BE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="week2-破碎的拼图"><a href="#week2-破碎的拼图" class="headerlink" title="week2 破碎的拼图"></a>week2 破碎的拼图</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>打开附件，发现有几个文件。<br><img src="/img/%E6%8B%BC%E5%9B%BE.png" alt="附件"><br>打开txt文件，有给我们提示，根据提示判断是把文件分成了三个文件，其中应该应该是steghide加密，那加密文件大概率藏在图片中。 使用<code>steghide extract -sf image.jpg -p ?CTF</code>来得到文件<br><img src="/img/%E6%8B%BC%E5%9B%BE1.png" alt="过程"><br>成功提取到了第三个文件，接下来就是把他们合并起来，先将文件统一改名<br><img src="/img/%E6%8B%BC%E5%9B%BE2.png" alt="重命名"><br>再使用copy命令合并压缩包<code>copy /b flag.z01 + flag.z02 + flag.zip complete_flag.zip</code><br><img src="/img/%E6%8B%BC%E5%9B%BE3.png" alt="合并"><br>之后就得到flag了，flag是flag{br0k3n_p1eces_r3a553mb13d_7h3_puzz13}  </p><h3 id="注意-当你合并压缩包时，压缩包要是同一个前缀，并且zip文件要是最后一个"><a href="#注意-当你合并压缩包时，压缩包要是同一个前缀，并且zip文件要是最后一个" class="headerlink" title="注意 当你合并压缩包时，压缩包要是同一个前缀，并且zip文件要是最后一个"></a>注意 当你合并压缩包时，压缩包要是同一个前缀，并且zip文件要是最后一个</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>-ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>对于week1 《文化木的侦探委托（一）》的复盘</title>
     <link href="/2025/11/12/week1%E4%BE%A6%E6%8E%A2/"/>
     <url>/2025/11/12/week1%E4%BE%A6%E6%8E%A2/</url>
