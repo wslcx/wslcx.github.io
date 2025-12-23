@@ -19,29 +19,30 @@
   <meta name="author" content="wslcx">
   <meta name="keywords" content="">
   
-    <meta name="description" content="week1 布豪有黑客（1）复盘解密先看题目，根据题目信息，flag应该藏在http的流量包里。用Wireshark打开附件，用http过滤发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出发现压缩包有密码，然后passsword里有密码将密码输入 然后就得到flag了这里主要就是考流量包的解析">
+    <meta name="description" content="对于ISCTF2025的部分misc的wp星髓宝盒首先用随波逐流打开文件里面的图片，用foremost分离出来，发现这个真星髓宝盒是一个有密码的压缩包。所以密码肯定在，另外两个文件里面，找了好久才知道原来是文本隐水印这个是解码的网站https:&#x2F;&#x2F;www.guofei.site&#x2F;pictures_for_blog&#x2F;app&#x2F;text_watermark&#x2F;v1.html发现解码之后，又是一个文本，判断">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对于week1 布豪有黑客（1）的复盘">
-<meta property="og:url" content="https://wslcx.github.io/2025/11/11/week1%E5%B8%83%E8%B1%AA%E6%9C%89%E9%BB%91%E5%AE%A2/index.html">
+<meta property="og:title" content="对于ISCTF2025的部分misc的wp">
+<meta property="og:url" content="https://wslcx.github.io/2025/12/22/isctf2025/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="week1 布豪有黑客（1）复盘解密先看题目，根据题目信息，flag应该藏在http的流量包里。用Wireshark打开附件，用http过滤发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出发现压缩包有密码，然后passsword里有密码将密码输入 然后就得到flag了这里主要就是考流量包的解析">
+<meta property="og:description" content="对于ISCTF2025的部分misc的wp星髓宝盒首先用随波逐流打开文件里面的图片，用foremost分离出来，发现这个真星髓宝盒是一个有密码的压缩包。所以密码肯定在，另外两个文件里面，找了好久才知道原来是文本隐水印这个是解码的网站https:&#x2F;&#x2F;www.guofei.site&#x2F;pictures_for_blog&#x2F;app&#x2F;text_watermark&#x2F;v1.html发现解码之后，又是一个文本，判断">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%881%EF%BC%89.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%882%EF%BC%89.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%883%EF%BC%89.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%884%EF%BC%89.png">
-<meta property="og:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21%EF%BC%885%EF%BC%89.png">
-<meta property="article:published_time" content="2025-11-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-14T16:50:46.510Z">
+<meta property="og:image" content="https://wslcx.github.io/img/%E6%98%9F%E9%AB%931.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E6%98%9F%E9%AB%932.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E6%98%9F%E9%AB%933.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E6%98%9F%E9%AB%934.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E6%9C%A8%E5%8F%B6%E6%A3%AE1.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E6%9C%A8%E5%8F%B6%E6%A3%AE3.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E6%9C%A8%E5%8F%B6%E6%A3%AE4.png">
+<meta property="og:image" content="https://wslcx.github.io/img/%E6%9C%A8%E5%8F%B6%E6%A3%AE2.png">
+<meta property="article:published_time" content="2025-12-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-23T10:21:14.365Z">
 <meta property="article:author" content="wslcx">
-<meta property="article:tag" content="-ctf">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wslcx.github.io/img/%E9%BB%91%E5%AE%A21.png">
+<meta name="twitter:image" content="https://wslcx.github.io/img/%E6%98%9F%E9%AB%931.png">
   
   
   
-  <title>对于week1 布豪有黑客（1）的复盘 - Hexo</title>
+  <title>对于ISCTF2025的部分misc的wp - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -207,7 +208,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="对于week1 布豪有黑客（1）的复盘"></span>
+            <span id="subtitle" data-typed-text="对于ISCTF2025的部分misc的wp"></span>
           
         </div>
 
@@ -218,8 +219,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-11-11 00:00" pubdate>
-          2025年11月11日 凌晨
+        <time datetime="2025-12-22 00:00" pubdate>
+          2025年12月22日 凌晨
         </time>
       </span>
     
@@ -230,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          110 字
+          403 字
         
       </span>
     
@@ -241,7 +242,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -278,12 +279,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">对于week1 布豪有黑客（1）的复盘</h1>
+            <h1 id="seo-header">对于ISCTF2025的部分misc的wp</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="week1-布豪有黑客（1）"><a href="#week1-布豪有黑客（1）" class="headerlink" title="week1 布豪有黑客（1）"></a>week1 布豪有黑客（1）</h1><h3 id="复盘解密"><a href="#复盘解密" class="headerlink" title="复盘解密"></a>复盘解密</h3><p>先看题目，根据题目信息，flag应该藏在http的流量包里。<br><img src="/img/%E9%BB%91%E5%AE%A21.png" srcset="/img/loading.gif" lazyload alt="题目"><br>用Wireshark打开附件，用http过滤<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%881%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="流量包"><br>发现有两个文件，一个是password的文件，一个是关于flag的压缩包，把这两个导出<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%882%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="文件"><br>发现压缩包有密码，然后passsword里有密码将密码输入<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%883%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="压缩包"> <img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%884%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="密码"><br>然后就得到flag了<br><img src="/img/%E9%BB%91%E5%AE%A21%EF%BC%885%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="答案"><br>这里主要就是考流量包的解析</p>
+                <h1 id="对于ISCTF2025的部分misc的wp"><a href="#对于ISCTF2025的部分misc的wp" class="headerlink" title="对于ISCTF2025的部分misc的wp"></a>对于ISCTF2025的部分misc的wp</h1><h2 id="星髓宝盒"><a href="#星髓宝盒" class="headerlink" title="星髓宝盒"></a>星髓宝盒</h2><p>首先用随波逐流打开文件里面的图片，用foremost分离出来，发现这个真星髓宝盒是一个有密码的压缩包。<br><img src="/img/%E6%98%9F%E9%AB%931.png" srcset="/img/loading.gif" lazyload alt="文件"><br>所以密码肯定在，另外两个文件里面，找了好久才知道原来是文本隐水印<br><img src="/img/%E6%98%9F%E9%AB%932.png" srcset="/img/loading.gif" lazyload alt="解码"><br>这个是解码的网站<a target="_blank" rel="noopener" href="https://www.guofei.site/pictures_for_blog/app/text_watermark/v1.html">https://www.guofei.site/pictures_for_blog/app/text_watermark/v1.html</a><br>发现解码之后，又是一个文本，判断应该是零宽隐写，将文本进行解码<br><img src="/img/%E6%98%9F%E9%AB%933.png" srcset="/img/loading.gif" lazyload alt="解码"><br>网站<a target="_blank" rel="noopener" href="https://tool.bfw.wiki/tool/1695021695027599.html">https://tool.bfw.wiki/tool/1695021695027599.html</a><br>得到了一串数字，然后我就卡住了，看了赛后的wp才发现，原来要用到图片里面的备注信息<br><img src="/img/%E6%98%9F%E9%AB%934.png" srcset="/img/loading.gif" lazyload alt="备注"><br>要打开<a target="_blank" rel="noopener" href="https://www.somd5.com/">https://www.somd5.com/</a>这个网站，经过解密就可以得到压缩包密码 <strong>!!!@@@###123</strong>之后打开压缩包就可以获得flag了<br>flag是<strong>ISCTF{1e7553787953e74113be4edfe8ca0e59}</strong> </p>
+<h2 id="木叶森"><a href="#木叶森" class="headerlink" title="木叶森"></a>木叶森</h2><p>打开文件，只有一个txt文本文件，问了ai之后，用随波逐流把base64转成图片，同时当你把txt文件拉进随波逐流的时候，它自动分离出一个jpg文件<br><img src="/img/%E6%9C%A8%E5%8F%B6%E6%A3%AE1.png" srcset="/img/loading.gif" lazyload alt="文件"><br><img src="/img/%E6%9C%A8%E5%8F%B6%E6%A3%AE3.png" srcset="/img/loading.gif" lazyload alt="文件"><br>先看base64转出来的图片，是一个二维码，扫一下。<br><img src="/img/%E6%9C%A8%E5%8F%B6%E6%A3%AE4.png" srcset="/img/loading.gif" lazyload alt="图片"><br>得到一串数字 <strong>20000824</strong><br>之后再来看它自动分离出来的图片，看了官方的wp才发现，原来这个jpg格式的文件要自己发现，不知道为什么随波逐流直接分离出来了。<br><img src="/img/%E6%9C%A8%E5%8F%B6%E6%A3%AE2.png" srcset="/img/loading.gif" lazyload alt="图片"><br>转化为图片之后，判断是社会主义核心价值观加密，进行解密，得到一串字符 <strong>….Mamba….</strong><br>然后就是数字和字符组合就得到flag了<br><strong>ISCTF{2000Mamb0824}</strong></p>
 
                 
               </div>
@@ -293,13 +295,6 @@
               <div class="post-metas my-3">
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/ctf/" class="print-no-link">#-ctf</a>
-      
-    </div>
-  
 </div>
 
 
@@ -308,8 +303,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>对于week1 布豪有黑客（1）的复盘</div>
-      <div>https://wslcx.github.io/2025/11/11/week1布豪有黑客/</div>
+      <div>对于ISCTF2025的部分misc的wp</div>
+      <div>https://wslcx.github.io/2025/12/22/isctf2025/</div>
     </div>
     <div class="license-meta">
       
@@ -321,7 +316,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年11月11日</div>
+          <div>2025年12月22日</div>
         </div>
       
       
@@ -353,18 +348,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/11/12/week1%E4%BE%A6%E6%8E%A2/" title="对于week1 《文化木的侦探委托（一）》的复盘">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">对于week1 《文化木的侦探委托（一）》的复盘</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/11/09/web%E5%9F%BA%E7%A1%80/" title="对于流量包的基础解读">
-                        <span class="hidden-mobile">对于流量包的基础解读</span>
+                      <a href="/2025/11/16/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" title="对于文件上传漏洞的初步学习">
+                        <span class="hidden-mobile">对于文件上传漏洞的初步学习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
